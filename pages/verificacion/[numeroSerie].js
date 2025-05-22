@@ -87,14 +87,7 @@ export default function Detalle({ documento, qr }) {
             <td className="etiqueta">Tipo de documento emitido</td>
             <td>{documento.tipoDocumento}</td>
             <td rowSpan="7" style={{ textAlign: 'center' }}>
-              <img
-                src={documento.fotoUrl}
-                className="foto"
-                onError={(e) => {
-                  e.target.onerror = null
-                  e.target.src = "/images/placeholder.png"
-                }}
-              />
+              <img src={`/api/foto?id=${documento.id}`} alt="Foto" style={{ width: '150px' }} />
             </td>
           </tr>
           <tr>

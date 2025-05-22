@@ -65,15 +65,7 @@ export default function Documentos({ documentos }) {
                 {documentosFiltrados.map((documento) => (
                   <tr key={documento.numeroSerie}>
                     <td>
-                      {documento.fotoUrl && (
-                        <Image
-                          src={documento.fotoUrl}
-                          alt={documento.nombre}
-                          width={50}
-                          height={50}
-                          style={{ objectFit: 'cover' }}
-                        />
-                      )}
+                      <img src={`/api/foto?id=${documento.id}`} alt="Foto" style={{ width: '50px' }} />
                     </td>
                     <td>{documento.numeroSerie}</td>
                     <td>{new Date(documento.fechaEmision).toLocaleDateString()}</td>
