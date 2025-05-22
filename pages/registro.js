@@ -65,7 +65,7 @@ export default function Registro() {
 
       const data = await res.json();
       toast.success(data.mensaje);
-      router.push('/documentos');
+      router.push('/');
     } catch (error) {
       console.error("Error al enviar la solicitud:", error);
       setMensaje(`Error al registrar: ${error.message}`);

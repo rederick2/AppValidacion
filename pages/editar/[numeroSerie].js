@@ -21,7 +21,7 @@ export default function EditarDocumento({ documento }) {
   useEffect(() => {
     if (!documento) {
       toast.error('Documento no encontrado');
-      router.push('/documentos');
+      router.push('/');
     }
   }, [documento, router]);
 
@@ -61,7 +61,7 @@ export default function EditarDocumento({ documento }) {
 
       const data = await res.json();
       toast.success(data.mensaje);
-      router.push('/documentos');
+      router.push('/');
     } catch (error) {
       console.error("Error al enviar la solicitud:", error);
       setMensaje(`Error al registrar: ${error.message}`);
