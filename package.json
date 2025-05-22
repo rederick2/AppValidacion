@@ -1,0 +1,27 @@
+{
+  "name": "reniec_verificador",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prisma": "prisma"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "bootstrap": "^5.3.6",
+    "formidable": "^3.5.4",
+    "next": "^15.3.2",
+    "prisma": "^6.8.2",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.0",
+    "react-toastify": "^11.0.5"
+  }
+}

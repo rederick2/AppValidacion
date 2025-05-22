@@ -1,0 +1,19 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Documento {
+  id              Int     @id @default(autoincrement())
+  numeroSerie     String  @unique
+  fechaEmision    DateTime
+  tipoDocumento   String
+  solicitud       String
+  dni             String
+  nombre          String
+  fotoUrl         String?
+}
