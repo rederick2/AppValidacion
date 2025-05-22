@@ -54,20 +54,21 @@ export default async function handler(req, res) {
 
     //const fotoUrl = `/uploads/${path.basename(foto.filepath)}`;
 
-    const fotoNombre = `${Date.now()}-${foto.originalFilename}`;
-    const fotoPath = path.join(process.cwd(), 'public', 'uploads', fotoNombre);
+    //const fotoNombre = `${Date.now()}-${foto.originalFilename}`;
+    //const fotoPath = path.join(process.cwd(), 'public', 'uploads', fotoNombre);
 
-    try {
+    /*try {
       //await fs.copyFile(foto.filepath, fotoPath);
       await fs.rename(foto.filepath, fotoPath)
 
     } catch (e) {
       console.error('Error al copiar el archivo:', e);
       return res.status(500).json({ message: 'Error al copiar el archivo: ' + e.message });
-    }
+    }*/
 
     //const fotoUrl = `/uploads/${fotoNombre}`;
-    const fotoUrl = `/uploads/${path.basename(foto.filepath)}`
+    //const fotoUrl = `/uploads/${path.basename(foto.filepath)}`
+    const buffer = await fs.readFile(foto.filepath) // lee binario
 
     const prisma = new PrismaClient();
 
@@ -80,7 +81,7 @@ export default async function handler(req, res) {
           solicitud,
           dni,
           nombre,
-          fotoUrl,
+          fotoBlob: buffer // ✅ se guarda en BYTEA
         },
       });
 

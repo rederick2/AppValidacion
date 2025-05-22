@@ -15,5 +15,5 @@ model Documento {
   solicitud       String
   dni             String
   nombre          String
-  fotoUrl         String?
+  fotoBlob        Bytes? // Prisma mapea esto a PostgreSQL BYTEA
 }
